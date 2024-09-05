@@ -1309,6 +1309,13 @@ uint32_t AudioPlayWav::lengthMillis(void)
   return roundf( msPerSample * total_length / (bytes * channels) );
 }
 
+uint32_t AudioPlayWav::length(void)
+{
+	asm("":::"memory");
+	//if (state == STATE_STOP) return 0; // will return 0 anyway
+	return total_length / (bytes * channels);
+}
+
 //----------------------------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------------------------

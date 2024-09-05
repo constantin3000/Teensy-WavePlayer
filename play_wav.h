@@ -168,7 +168,8 @@ class AudioPlayWav : public AudioBaseWav, public AudioStream
 		void loop(bool enable);
 		void loop(size_t firstSample, size_t lastSample, uint16_t count);
 		int loopCount(void);
-    uint32_t lengthMillis(void);
+		uint32_t lengthMillis(void);
+		uint32_t length(void);
     uint32_t channelMask(void) {return channelmask;}
   private:
     bool _play(APW_FORMAT fmt, uint32_t sampleRate, uint8_t number_of_channels, bool paused, bool autorewind );
